@@ -17,24 +17,29 @@ public class CompetitionEntity {
     public CompetitionEntity() {
     }
 
+    public CompetitionEntity(String competitionName, float distance) {
+        this.competitionName = competitionName;
+        this.distance = distance;
+    }
+
     public long getCompetitionId() {
         return competitionId;
-    }
-
-    public String getCompetitionName() {
-        return competitionName;
-    }
-
-    public void setCompetitionName(String competitionName) {
-        this.competitionName = competitionName;
     }
 
     public float getDistance() {
         return distance;
     }
 
+    public String getCompetitionName() {
+        return competitionName;
+    }
+
+    // updateRace will use it
+    public void setCompetitionName(String competitionName) {
+        this.competitionName = competitionName;
+    }
+
     public void setDistance(float distance) {
         this.distance = distance;
     }
-
 }

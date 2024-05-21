@@ -10,21 +10,23 @@ public class ResultEntity {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long resultId;
 
-    @JoinColumn(nullable = false)
+    @ManyToOne
+    @JoinColumn(name = "runner_id", nullable = false)
+    private RunnerEntity runnerEntity;
+
     private float timeResult;
 
-    @JsonIgnore
-    @OneToOne
-    @JoinColumn(nullable = false)
-    private RunnerEntity participant;
-
-    @OneToOne
-    @JoinColumn(nullable = false)
-    private CompetitionEntity competition;
-
-
+    @ManyToOne
+    @JoinColumn(name = "competition_id", nullable = false)
+    private CompetitionEntity competitionEntity;
 
     public ResultEntity() {
+    }
+
+    public ResultEntity(float timeResult, CompetitionEntity competitionEntity, RunnerEntity runnerEntity) {
+        this.timeResult = timeResult;
+        this.competitionEntity = competitionEntity;
+        this.runnerEntity = runnerEntity;
     }
 
     public long getResultId() {
@@ -35,23 +37,11 @@ public class ResultEntity {
         return timeResult;
     }
 
-    public void setTimeResult(float timeResult) {
-        this.timeResult = timeResult;
+    public RunnerEntity getRunnerEntity() {
+        return runnerEntity;
     }
 
-    public RunnerEntity getParticipant() {
-        return participant;
-    }
-
-    public void setParticipant(RunnerEntity participant) {
-        this.participant = participant;
-    }
-
-    public CompetitionEntity getCompetition() {
-        return competition;
-    }
-
-    public void setCompetition(CompetitionEntity competition) {
-        this.competition = competition;
+    public CompetitionEntity getCompetitionEntity() {
+        return competitionEntity;
     }
 }

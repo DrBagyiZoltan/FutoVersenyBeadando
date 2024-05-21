@@ -1,7 +1,6 @@
 package com.zq2g8e.runningcomp.entity;
 
-enum Sex {
+public enum Sex {
     MALE,
     FEMALE
 }
-

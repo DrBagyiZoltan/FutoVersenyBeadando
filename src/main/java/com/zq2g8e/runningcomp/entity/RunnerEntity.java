@@ -2,9 +2,6 @@ package com.zq2g8e.runningcomp.entity;
 
 import jakarta.persistence.*;
 
-import java.util.ArrayList;
-import java.util.List;
-
 @Entity
 @Table(name = "runner")
 public class RunnerEntity {
@@ -12,12 +9,17 @@ public class RunnerEntity {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long runnerId;
     private String runnerName;
-    private long runnerAge;
+    private int runnerAge;
     @Enumerated(EnumType.STRING)
     private Sex sex;
 
-
     public RunnerEntity() {
+    }
+
+    public RunnerEntity(String runnerName, int runnerAge, Sex sex) {
+        this.runnerName = runnerName;
+        this.runnerAge = runnerAge;
+        this.sex = sex;
     }
 
     public long getRunnerId() {
@@ -28,23 +30,15 @@ public class RunnerEntity {
         return runnerName;
     }
 
-    public void setRunnerName(String runnerName) {
-        this.runnerName = runnerName;
-    }
-
-    public long getRunnerAge() {
+    public int getRunnerAge() {
         return runnerAge;
     }
 
-    public void setRunnerAge(long runnerAge) {
-        this.runnerAge = runnerAge;
+    public void modifyRunnerAge(int newRunnerAge) {
+        this.runnerAge = newRunnerAge;
     }
 
     public Sex getSex() {
         return sex;
-    }
-
-    public void setSex(Sex sex) {
-        this.sex = sex;
     }
 }
