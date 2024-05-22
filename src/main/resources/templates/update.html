@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Update Competition</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+</head>
+<body>
+<div class="container">
+    <h1>Modify this competition</h1>
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Distance</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td><span th:text="${competition.competitionId}">Title </span></td>
+            <td><span th:text="${competition.competitionName}">Title </span></td>
+            <td><span th:text="${competition.distance}">Title </span></td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+<!--<div class="container">
+    <div class="col col-5">
+        <div>Web Application. Passed parameter : <span th:text="${param.q}"></span></div>
+<h1>Update Competition</h1>
+<form th:action="@{/competitions/{id}(id=${competition.competitionId})}" th:object="${competition}" method="post">
+    <div>
+        <label>Name:</label>
+        <input type="text" th:field="*{competitionName}" />
+    </div>
+    <div>
+        <label>Distance:</label>
+        <input type="text" th:field="*{distance}" />
+    </div>
+    <div>
+        <button type="submit">Save</button>
+    </div>
+</form>
+    </div> </div>-->
+<div class="container">
+    <div class="col col-5">
+        <form th:action="@{/api/v1/runnercompetition/updateRace/{id}(id=${competition.competitionId})}" th:object="${competitionEntity}" method="post">
+            <div class="form-group">
+                <label>The ID:</label>
+                <input class="form-control" type="text" id="competitionId" name="id"
+                       th:value="${competition.competitionId}" readonly>
+            </div>
+            <div class="form-group">
+                <label>The new name:</label>
+                <input class="form-control" type="text" id="competitionName" name="competitionName" placeholder="Enter new name"
+                       required>
+            </div>
+            <div class="form-group form-floating">
+                <label>The new distance:</label>
+                <input type="tel" class="form-control" id="distance" name="distance" placeholder="Enter new distance"
+                       required>
+            </div>
+            <div class="mt-3">
+                <button class="btn btn-primary" type="submit">Submit</button>
+            </div>
+        </form>
+        <div style="padding-top: 20px">
+            <a href="/">
+                <button type="button" class="btn btn-secondary">Back to Start</button>
+            </a>
+        </div>
+    </div>
+</div>
+</body>
+</html>

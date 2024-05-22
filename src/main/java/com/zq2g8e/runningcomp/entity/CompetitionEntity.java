@@ -22,6 +22,12 @@ public class CompetitionEntity {
         this.distance = distance;
     }
 
+   /* public CompetitionEntity(Long competitionId, String competitionName, float distance) {
+        this.competitionId = competitionId;
+        this.competitionName = competitionName;
+        this.distance = distance;
+    }*/
+
     public long getCompetitionId() {
         return competitionId;
     }

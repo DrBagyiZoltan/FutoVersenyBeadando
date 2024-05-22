@@ -27,10 +27,10 @@ public class DataLoader implements CommandLineRunner {
     @Override
     public void run(String... args) {
 
-        RunnerEntity runnerEntity1 = new RunnerEntity("Geza", 20, Sex.MALE);
-        RunnerEntity runnerEntity2 = new RunnerEntity("Laci",21, Sex.MALE);
-        RunnerEntity runnerEntity3 = new RunnerEntity("Teri",18, Sex.FEMALE);
-        RunnerEntity runnerEntity4 = new RunnerEntity("Kati", 21, Sex.FEMALE);
+        RunnerEntity runnerEntity1 = new RunnerEntity("Geza", 20, "male");
+        RunnerEntity runnerEntity2 = new RunnerEntity("Laci",21, "male");
+        RunnerEntity runnerEntity3 = new RunnerEntity("Teri",18, "female");
+        RunnerEntity runnerEntity4 = new RunnerEntity("Kati", 21, "female");
 
         runnerRepository.save(runnerEntity1);
         runnerRepository.save(runnerEntity2);
