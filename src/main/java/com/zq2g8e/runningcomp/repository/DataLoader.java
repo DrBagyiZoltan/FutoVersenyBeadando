@@ -2,7 +2,6 @@ package com.zq2g8e.runningcomp.repository;
 import com.zq2g8e.runningcomp.entity.CompetitionEntity;
 import com.zq2g8e.runningcomp.entity.ResultEntity;
 import com.zq2g8e.runningcomp.entity.RunnerEntity;
-import com.zq2g8e.runningcomp.entity.Sex;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
@@ -53,4 +52,3 @@ public class DataLoader implements CommandLineRunner {
         resultRepository.save(resultEntity4);
     }
 }
-

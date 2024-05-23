@@ -2,9 +2,6 @@ package com.zq2g8e.runningcomp.entity;
 
 import jakarta.persistence.*;
 
-import java.util.ArrayList;
-import java.util.List;
-
 @Entity
 @Table(name = "competition")
 public class CompetitionEntity {
@@ -21,12 +18,6 @@ public class CompetitionEntity {
         this.competitionName = competitionName;
         this.distance = distance;
     }
-
-   /* public CompetitionEntity(Long competitionId, String competitionName, float distance) {
-        this.competitionId = competitionId;
-        this.competitionName = competitionName;
-        this.distance = distance;
-    }*/
 
     public long getCompetitionId() {
         return competitionId;

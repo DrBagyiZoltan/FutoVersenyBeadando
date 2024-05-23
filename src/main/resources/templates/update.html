@@ -24,27 +24,10 @@
         </tbody>
     </table>
 </div>
-<!--<div class="container">
-    <div class="col col-5">
-        <div>Web Application. Passed parameter : <span th:text="${param.q}"></span></div>
-<h1>Update Competition</h1>
-<form th:action="@{/competitions/{id}(id=${competition.competitionId})}" th:object="${competition}" method="post">
-    <div>
-        <label>Name:</label>
-        <input type="text" th:field="*{competitionName}" />
-    </div>
-    <div>
-        <label>Distance:</label>
-        <input type="text" th:field="*{distance}" />
-    </div>
-    <div>
-        <button type="submit">Save</button>
-    </div>
-</form>
-    </div> </div>-->
 <div class="container">
     <div class="col col-5">
-        <form th:action="@{/api/v1/runnercompetition/updateRace/{id}(id=${competition.competitionId})}" th:object="${competitionEntity}" method="post">
+        <form th:action="@{/api/v1/runnercompetition/updateRace/{id}(id=${competition.competitionId})}"
+              th:object="${competitionEntity}" method="post">
             <div class="form-group">
                 <label>The ID:</label>
                 <input class="form-control" type="text" id="competitionId" name="id"
@@ -52,7 +35,8 @@
             </div>
             <div class="form-group">
                 <label>The new name:</label>
-                <input class="form-control" type="text" id="competitionName" name="competitionName" placeholder="Enter new name"
+                <input class="form-control" type="text" id="competitionName" name="competitionName"
+                       placeholder="Enter new name"
                        required>
             </div>
             <div class="form-group form-floating">

@@ -1,6 +1,5 @@
 package com.zq2g8e.runningcomp.entity;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 
 @Entity

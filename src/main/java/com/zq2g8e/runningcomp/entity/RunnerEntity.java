@@ -25,12 +25,6 @@ public class RunnerEntity {
         this.runnerAge = runnerAge;
         this.sex = Sex.valueOf(sex.toUpperCase());
     }
-   /*<tr th:each="runner : ${runners}">
-            <td th:text="${runner.runnerId}"></td>
-            <td th:text="${runner.runnerName}"></td>
-            <td th:text="${runner.runnerAge}"></td>
-        </tr>
-        */
 
     public long getRunnerId() {
         return runnerId;
