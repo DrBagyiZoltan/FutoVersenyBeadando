@@ -20,7 +20,8 @@
         <tr th:each="runner : ${runners}">
             <td><span th:text="${runner.runnerId}">Title </span></td>
             <td><span th:text="${runner.runnerName}">Title </span></td>
-            <td><span th:text="${runner.runnerAge}">Title </span></td>
+            <td><span th:if="${runner.runnerAge != null}" th:text="${runner.runnerAge}"></span>
+                <span th:if="${runner.runnerAge == null}">no Data</span></td>
         </tr>
         </tbody>
     </table>
@@ -38,10 +39,6 @@
                 <input class="form-control" type="number" id="runnerAge" name="age" placeholder="Enter runner age"
                        required>
             </div>
-            <!--            <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" id="female" name="sex" value="Female">
-                            <label for="Female">Female</label>
-                        </div>-->
             <div class="form-check form-check-input">
                 <div><input type="radio" id="female" name="sex" value="Female" checked>
                     <label for="Female">Female</label></div>

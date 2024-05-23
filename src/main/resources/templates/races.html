@@ -26,6 +26,15 @@
                     </a>
                 </div>
             </td>
+            <td>
+                <div>
+
+                    <!--<a th:href="@{/competitions/{id}(id=${competition.competitionId})}">-->
+                    <a th:href="@{/api/v1/runnercompetition/getRaceRunners/{id}(id=${competition.competitionId})}">
+                        <button class="btn btn-outline-dark">Details</button>
+                    </a>
+                </div>
+            </td>
         </tr>
         </tbody>
     </table>
@@ -33,7 +42,7 @@
 
 <div class="container">
     <div class="col col-5">
-        <h1>Add race</h1>
+        <h1>Add new race</h1>
         <form action="/addRace" method="post">
             <div class="form-group">
                 <input type="text" class="form-control" id="competitionName" name="competitionName" placeholder="Enter the name of the race" required>
@@ -41,7 +50,7 @@
             <div class="form-group form-floating">
                 <input type="tel" class="form-control" id="distance" name="distance" placeholder="Enter the distance" required>
             </div>
-            <button type="submit" class="btn btn-primary">Add Race</button>
+            <button type="submit" class="btn btn-primary">Submit new race</button>
         </form>
         <div style="padding-top: 25px">
             <a href="/">

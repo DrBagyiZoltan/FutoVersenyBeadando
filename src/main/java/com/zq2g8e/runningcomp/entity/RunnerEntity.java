@@ -16,6 +16,10 @@ public class RunnerEntity {
     public RunnerEntity() {
     }
 
+    public RunnerEntity(String runnerName) {
+        this.runnerName = runnerName;
+    }
+
     public RunnerEntity(String runnerName, Integer runnerAge, String sex) {
         this.runnerName = runnerName;
         this.runnerAge = runnerAge;

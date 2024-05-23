@@ -7,7 +7,7 @@ import jakarta.persistence.*;
 @Table(name = "results")
 public class ResultEntity {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long resultId;
 
     @ManyToOne
@@ -21,6 +21,7 @@ public class ResultEntity {
     private CompetitionEntity competitionEntity;
 
     public ResultEntity() {
+
     }
 
     public ResultEntity(float timeResult, CompetitionEntity competitionEntity, RunnerEntity runnerEntity) {
